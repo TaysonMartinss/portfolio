@@ -26,11 +26,14 @@ jobs:
         with:
           node-version: 20
           cache: npm
+          cache-dependency-path: portfolio/package-lock.json
 
       - name: Install dependencies
+        working-directory: portfolio
         run: npm ci
 
       - name: Build
+        working-directory: portfolio
         env:
           VITE_EMAILJS_SERVICE_ID: ${{ vars.VITE_EMAILJS_SERVICE_ID }}
           VITE_EMAILJS_TEMPLATE_ID: ${{ vars.VITE_EMAILJS_TEMPLATE_ID }}
@@ -41,7 +44,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: portfolio/dist
 
       - uses: actions/deploy-pages@v4
         id: deployment
