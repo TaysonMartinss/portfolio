@@ -15,7 +15,7 @@ function Model({ dragRef }: { dragRef: React.MutableRefObject<DragState> }) {
   const autoY = useRef(0)
   const smoothX = useRef(0)
   const smoothY = useRef(0)
-  const { scene } = useGLTF('/model.glb')
+  const { scene } = useGLTF(import.meta.env.BASE_URL + 'model.glb')
 
   useFrame((_, delta) => {
     if (!groupRef.current) return
