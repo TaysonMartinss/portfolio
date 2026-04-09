@@ -67,7 +67,7 @@ function App() {
       <div className='absolute inset-0 bg-black/60 -z-10' />
 
       {/* Navbar */}
-      <header className='px-6 md:px-20 w-full h-16 md:h-20 flex items-center justify-between relative z-50'>
+      <header className='px-6 md:px-20 w-full h-16 md:h-20 flex items-center justify-between relative z-[70]'>
         <h1
           className='text-2xl font-bold text-white cursor-pointer'
           onClick={() => navigateTo(0)}
@@ -134,7 +134,7 @@ function App() {
 
       {/* Mobile menu overlay */}
       {menuOpen && (
-        <div className='fixed inset-0 bg-black z-40 flex flex-col items-center justify-center gap-8 md:hidden'>
+        <div className='fixed inset-0 bg-black z-[60] flex flex-col items-center justify-center gap-8 md:hidden'>
           <ul className='flex flex-col gap-6 text-xl font-semibold text-center'>
             {t.nav.map((item, i) => (
               <li
