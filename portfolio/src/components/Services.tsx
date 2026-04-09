@@ -117,16 +117,16 @@ export default function Services({ lang }: { lang: Lang }) {
   const t = content[lang]
 
   return (
-    <section className='px-20 py-16 min-h-[calc(100vh-5rem)] flex items-center relative z-50'>
-      <div className='w-full flex flex-col gap-12'>
+    <section className='px-6 md:px-20 py-10 md:py-16 min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex items-center relative z-50'>
+      <div className='w-full flex flex-col gap-8 md:gap-12'>
 
         <div className='text-center'>
           <span className='text-cyan-400 font-semibold text-sm uppercase tracking-widest'>{t.subtitle}</span>
-          <h2 className='text-5xl font-bold text-white mt-2'>{t.title}</h2>
+          <h2 className='text-3xl md:text-5xl font-bold text-white mt-2'>{t.title}</h2>
           <div className='w-16 h-1 bg-cyan-400 mt-4 rounded mx-auto' />
         </div>
 
-        <div className='grid grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6'>
           {t.services.map((service, i) => (
             <div
               key={i}

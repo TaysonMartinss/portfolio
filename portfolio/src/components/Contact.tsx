@@ -91,19 +91,19 @@ export default function Contact({ lang }: { lang: Lang }) {
   }
 
   return (
-    <section className='px-20 py-16 min-h-[calc(100vh-5rem)] flex items-center relative z-50'>
-      <div className='w-full flex gap-16 items-start'>
+    <section className='px-6 md:px-20 py-10 md:py-16 min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex items-center relative z-50'>
+      <div className='w-full flex flex-col lg:flex-row gap-10 lg:gap-16 items-start'>
 
         {/* Left — form */}
-        <div className='flex-1 flex flex-col gap-6'>
+        <div className='flex-1 flex flex-col gap-5 md:gap-6 w-full'>
           <div>
             <span className='text-cyan-400 font-semibold text-sm uppercase tracking-widest'>{t.subtitle}</span>
-            <h2 className='text-5xl font-bold text-white mt-2'>{t.title}</h2>
+            <h2 className='text-3xl md:text-5xl font-bold text-white mt-2'>{t.title}</h2>
             <div className='w-16 h-1 bg-cyan-400 mt-4 rounded' />
           </div>
 
           <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
-            <div className='flex gap-4'>
+            <div className='flex flex-col sm:flex-row gap-4'>
               <input
                 required
                 className={inputClass}
@@ -151,7 +151,7 @@ export default function Contact({ lang }: { lang: Lang }) {
         </div>
 
         {/* Right — info */}
-        <div className='w-80 flex flex-col gap-6 mt-28'>
+        <div className='w-full lg:w-80 flex flex-col gap-4 md:gap-6 lg:mt-28'>
           {[
             { icon: <FaMapMarkerAlt size={20} />, label: t.infoLabels[0], value: t.location },
             { icon: <FaEnvelope size={20} />, label: t.infoLabels[1], value: t.email },

@@ -43,25 +43,25 @@ export default function About({ lang }: { lang: Lang }) {
   const t = content[lang]
 
   return (
-    <section className='px-20 py-16 min-h-[calc(100vh-5rem)] flex items-center relative z-50'>
-      <div className='w-full flex gap-20 items-center'>
+    <section className='px-6 md:px-20 py-10 md:py-16 min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)] flex items-center relative z-50'>
+      <div className='w-full flex flex-col lg:flex-row gap-10 lg:gap-20 items-start lg:items-center'>
 
         {/* Left — bio */}
-        <div className='flex-1 flex flex-col gap-6'>
+        <div className='flex-1 flex flex-col gap-5 md:gap-6'>
           <div>
             <span className='text-cyan-400 font-semibold text-sm uppercase tracking-widest'>{t.subtitle}</span>
-            <h2 className='text-5xl font-bold text-white mt-2'>{t.title}</h2>
+            <h2 className='text-3xl md:text-5xl font-bold text-white mt-2'>{t.title}</h2>
             <div className='w-16 h-1 bg-cyan-400 mt-4 rounded' />
           </div>
-          <p className='text-gray-300 text-base leading-relaxed'>{t.bio1}</p>
-          <p className='text-gray-300 text-base leading-relaxed'>{t.bio2}</p>
+          <p className='text-gray-300 text-sm md:text-base leading-relaxed'>{t.bio1}</p>
+          <p className='text-gray-300 text-sm md:text-base leading-relaxed'>{t.bio2}</p>
 
           {/* Stats */}
-          <div className='grid grid-cols-4 gap-4 mt-4'>
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-4'>
             {stats.map((s, i) => (
-              <div key={i} className='flex flex-col items-center gap-2 border border-cyan-400/20 rounded-lg p-4 bg-white/5 hover:border-cyan-400/60 hover:bg-cyan-400/5 transition-all'>
+              <div key={i} className='flex flex-col items-center gap-2 border border-cyan-400/20 rounded-lg p-3 md:p-4 bg-white/5 hover:border-cyan-400/60 hover:bg-cyan-400/5 transition-all'>
                 <span className='text-cyan-400'>{s.icon}</span>
-                <span className='text-2xl font-bold text-white'>{s.value}</span>
+                <span className='text-xl md:text-2xl font-bold text-white'>{s.value}</span>
                 <span className='text-gray-400 text-xs text-center'>{t.statsLabel[i]}</span>
               </div>
             ))}
@@ -69,13 +69,13 @@ export default function About({ lang }: { lang: Lang }) {
         </div>
 
         {/* Right — skills */}
-        <div className='flex-1 flex flex-col gap-6'>
-          <h3 className='text-2xl font-bold text-white'>{t.skillsTitle}</h3>
-          <div className='grid grid-cols-2 gap-3'>
+        <div className='flex-1 flex flex-col gap-5 md:gap-6 w-full'>
+          <h3 className='text-xl md:text-2xl font-bold text-white'>{t.skillsTitle}</h3>
+          <div className='grid grid-cols-1 sm:grid-cols-2 gap-3'>
             {t.skills.map((skill) => (
               <div key={skill} className='flex items-center gap-3 border border-cyan-400/20 rounded-lg px-4 py-3 bg-white/5 hover:border-cyan-400/60 hover:bg-cyan-400/5 transition-all group'>
                 <span className='w-2 h-2 rounded-full bg-cyan-400 group-hover:scale-125 transition-transform' />
-                <span className='text-gray-200 font-semibold'>{skill}</span>
+                <span className='text-gray-200 font-semibold text-sm md:text-base'>{skill}</span>
               </div>
             ))}
           </div>
