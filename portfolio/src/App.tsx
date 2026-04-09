@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { BR, US, ES } from 'country-flag-icons/react/3x2'
 import bgVideo from './assets/4779866-hd_1920_1080_30fps.mp4'
-import Scene3D from './components/Scene3D'
 import About from './components/About'
 import Services from './components/Services'
 import Projects from './components/Projects'
@@ -135,7 +134,7 @@ function App() {
 
       {/* Mobile menu overlay */}
       {menuOpen && (
-        <div className='fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center gap-8 md:hidden'>
+        <div className='fixed inset-0 bg-black z-40 flex flex-col items-center justify-center gap-8 md:hidden'>
           <ul className='flex flex-col gap-6 text-xl font-semibold text-center'>
             {t.nav.map((item, i) => (
               <li
@@ -200,10 +199,6 @@ function App() {
               </div>
             </div>
           </main>
-          {/* Hide 3D scene on mobile for performance */}
-          <div className='hidden md:block'>
-            <Scene3D />
-          </div>
         </>
       )}
 
